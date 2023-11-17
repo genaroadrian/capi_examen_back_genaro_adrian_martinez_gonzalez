@@ -20,7 +20,13 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->date('fecha_nacimiento')->nullable();
+        });
     }
+
+
 
     /**
      * Reverse the migrations.
